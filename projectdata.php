@@ -54,12 +54,18 @@ HERE;
  //write to the file
  fputcsv($csvFileOpen, $form_data);
 
-
+ echo "<html><body><table>\n\n";
+ $f = fopen("projectdata.csv", "r");
+ while (($line = fgetcsv($f)) !== false) {
+         echo "<tr>";
+         foreach ($line as $cell) {
+                 echo "<td>" . htmlspecialchars($cell) . "</td>";
+         }
+         echo "</tr>\n";
+ }
+ fclose($f);
+ echo "\n</table></body></html>";
  
- $timezone = date_default_timezone_get();
-
-echo "The current server timezone is: " . $timezone;
-echo $date;
  ?>
 </body>
 </html>
