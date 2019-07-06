@@ -28,6 +28,7 @@
  </p>
  <p>
  Blazer ID: $blazerId <br />
+ Team Number: $teamNumber <br />
  Total Time: $totalTime <br />
  Analysis and Design %: $analysisAndDesign <br />
  Coding %: $coding <br />
@@ -40,13 +41,10 @@ HERE;
  //open file for output
  $csvFileOpen = fopen("projectdata.csv", "a");
  $numberOfRows = count(file("projectdata.csv"));
- if($numberOfRows > 1)
-  {
-    $numberOfRows = ($numberOfRows - 1) + 1;
-  }
   $form_data = array(
    'numberOfRows'  => $numberOfRows,
    'blazerId'  => $blazerId,
+   'teamNumber'  => $teamNumber,
    'totalTime'  => $totalTime,
    'analysisAndDesign' => $analysisAndDesign,
    'coding' => $coding,
@@ -55,10 +53,15 @@ HERE;
    'other' => $other,
    'timestamp' =>  $date = date('Y-m-d H:i:s')
   );
+
+  echo '<p><a href="index.html">Printable report</a></p>';
+  echo '<p><a href="index.html">Download csv file</a></p>';
+  echo "<html><body><table>\n\n";
+
   //write to the file
   fputcsv($csvFileOpen, $form_data);
 
-  echo "<html><body><table>\n\n";
+  //read file and print on the page
   $f = fopen("projectdata.csv", "r");
   while (($line = fgetcsv($f)) !== false) {
          echo "<tr>";
