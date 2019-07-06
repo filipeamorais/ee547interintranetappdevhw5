@@ -2,15 +2,18 @@
 <html lang="en">
 <head>
  <meta charset="UTF-8">
- <title>addContact.html</title>
+ <title>projectdata.html</title>
  <link rel = "stylesheet"
   type = "text/css"
   href = "contact.css" />
 </head>
 <body>
  <?php
+date_default_timezone_set('America/Chicago');
+
  //read data from form
  $blazerId = filter_input(INPUT_GET, "blazerId");
+ $teamNumber = filter_input(INPUT_GET, "teamNumber");
  $totalTime = filter_input(INPUT_POST, "totalTime");
  $analysisAndDesign = filter_input(INPUT_POST, "analysisAndDesign");
  $coding = '';
@@ -24,18 +27,18 @@
   Your spam will be arriving shortly.
  </p>
  <p>
- first name: $blazerId <br />
- last name: $totalTime <br />
- email: $analysisAndDesign <br />
- phone: $coding
+ Blazer ID: $blazerId <br />
+ Total Time: $totalTime <br />
+ Analysis and Design %: $analysisAndDesign <br />
+ Coding %: $coding
  </p>
 HERE;
  //generate output for text file
  $output = <<< HERE
-first: $fName
-last: $lName
-email: $email
-phone: $phone
+first: $blazerId
+last: $totalTime
+email: $analysisAndDesign
+phone: $coding
 HERE;
  //open file for output
  $csvFile = fopen("projectdata.csv", "a");
@@ -52,16 +55,17 @@ HERE;
    'coding' => $coding,
    'testing' => $testing,
    'meetings' => $meetings,
-   'other' => $other
+   'other' => $other,
+   'timestamp' =>  $date = date('Y-m-d H:i:s')
   );
  //write to the file
  fwrite($fp, $output);
  fclose($fp);
 
 
- date_default_timezone_set('America/Chicago');
+ 
  $timezone = date_default_timezone_get();
- $date = date('Y-m-d H:i:s');
+
 echo "The current server timezone is: " . $timezone;
 echo $date;
  ?>
