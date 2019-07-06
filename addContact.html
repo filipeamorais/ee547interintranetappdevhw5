@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Filipe Morais</title>
+        <meta charset="utf-8">
+        <link rel="icon" href="favicon.png">
+        <link rel="stylesheet" href="normalize.css">
+        <link rel="stylesheet" href="site.css">
+    </head>
+    <body>
+      <main>
+        <div>
+        <h1>Grading Web Pages</h1>
+
+        <p>You can find bellow a table that explains each grade that can be assigned for a web page of your choice.</p>
+        
+        <h2>Rubric for Grading Table</h2>
+
+        <table style="width:100%">
+          <tr>
+            <th>Points</th>
+            <th>Phrase</th> 
+            <th>Detailed Definition</th>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Outstanding</td>
+            <td>Matches the target audience, very fast to load, the information is clear, it works on mobile devices, fonts easy to read, good contrast, style consistent.</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Very good</td>
+            <td>Matches the target audience, fast to load, the information is clear, it works on mobile devices, style consistent.</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Regular</td>
+            <td>Matches the target audience, not so fast to load, the information is not so clear, it works on mobile devices, style consistent.</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Bad</td>
+            <td>Does not match the target audience, slow to load, the information is not clear, it does not work on mobile devices, style not consistent.</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Very bad</td>
+            <td>Does not match the target audience, very slow to load, the information is not clear, it does not work on mobile devices, fonts not easy to read, bad contrast, style not consistent.</td>
+          </tr>
+        </table>
+
+        <h2>Submit your grade</h2>
+
+        <div id="form1">
+          <form action="addContact.php">
+            Web page URL: <input type="text" name="fName" value="">
+            <br>
+            Grade: <select name="cars">
+              <option value="one">1</option>
+              <option value="two">2</option>
+              <option value="three">3</option>
+              <option value="four">4</option>
+              <option value="five">5</option>
+            </select><br>
+            Comments: <input type="text" name="webpagecomments" value="">
+            <br>
+            <br>
+            <input type="submit" value="Submit">
+          </form> 
+        </div>
+        <h2>Learning Outcomes</h2>
+
+        <p>Learning how to create and edit a table and how to develop a form in html were the two main learning outcomes from this assignment.</p>
+
+        <p>Without explicitly specifying the method the form will work through the GET process, writing the attributes on the URL. This is not the most secure way but the information for this page is not sensitive.</p>
+        
+        <p>It was applied several different styles for the table and the form, such as padding, differnt background collor and borders as it can be seen on the page.</p>
+      
+      </div>
+      </main>
+        <footer>
+          &copy; Filipe Morais 2019
+        </footer>
+
+    </body>
+</html>
