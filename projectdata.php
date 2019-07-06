@@ -14,12 +14,12 @@ date_default_timezone_set('America/Chicago');
  //read data from form
  $blazerId = filter_input(INPUT_GET, "blazerId");
  $teamNumber = filter_input(INPUT_GET, "teamNumber");
- $totalTime = filter_input(INPUT_POST, "totalTime");
- $analysisAndDesign = filter_input(INPUT_POST, "analysisAndDesign");
- $coding = '';
- $testing = '';
- $meetings = '';
- $other = '';
+ $totalTime = filter_input(INPUT_GET, "totalTime");
+ $analysisAndDesign = filter_input(INPUT_GET, "analysisAndDesign");
+ $coding = filter_input(INPUT_GET, "coding");
+ $testing = filter_input(INPUT_GET, "testing");;
+ $meeting = filter_input(INPUT_GET, "meeting");;
+ $other = filter_input(INPUT_GET, "other");;
  //print form results to user
  print <<< HERE
  <h1>Thanks!</h1>
@@ -31,6 +31,9 @@ date_default_timezone_set('America/Chicago');
  Total Time: $totalTime <br />
  Analysis and Design %: $analysisAndDesign <br />
  Coding %: $coding
+ Testing %: $testing
+ Meetings %: $meeting
+ Other %: $other
  </p>
 HERE;
  //open file for output
