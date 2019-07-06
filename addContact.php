@@ -10,10 +10,13 @@
 <body>
  <?php
  //read data from form
- $lName = filter_input(INPUT_GET, "webpagecomments");
- $fName = filter_input(INPUT_GET, "fName");
- $email = filter_input(INPUT_POST, "email");
- $phone = filter_input(INPUT_POST, "phone");
+ $blazerId = filter_input(INPUT_GET, "blazerId");
+ $totalTime = filter_input(INPUT_POST, "totalTime");
+ $analysisAndDesign = filter_input(INPUT_POST, "analysisAndDesign");
+ $coding = '';
+ $testing = '';
+ $meetings = '';
+ $other = '';
  //print form results to user
  print <<< HERE
  <h1>Thanks!</h1>
@@ -21,10 +24,10 @@
   Your spam will be arriving shortly.
  </p>
  <p>
- first name: $fName <br />
- last name: $lName <br />
- email: $email <br />
- phone: $phone
+ first name: $blazerId <br />
+ last name: $totalTime <br />
+ email: $analysisAndDesign <br />
+ phone: $coding
  </p>
 HERE;
  //generate output for text file
@@ -35,10 +38,32 @@ email: $email
 phone: $phone
 HERE;
  //open file for output
- $fp = fopen("contacts.csv", "a");
+ $csvFile = fopen("projectdata.csv", "a");
+ $numberOfRows = count(file("projectdata.csv"));
+ if($numberOfRows > 1)
+  {
+    $numberOfRows = ($numberOfRows - 1) + 1;
+  }
+  $form_data = array(
+   'numberOfRows'  => $numberOfRows,
+   'blazerId'  => $blazerId,
+   'totalTime'  => $totalTime,
+   'analysisAndDesign' => $analysisAndDesign,
+   'coding' => $coding,
+   'testing' => $testing,
+   'meetings' => $meetings,
+   'other' => $other
+  );
  //write to the file
  fwrite($fp, $output);
  fclose($fp);
+
+
+ date_default_timezone_set('America/Chicago');
+ $timezone = date_default_timezone_get();
+ $date = date('Y-m-d H:i:s');
+echo "The current server timezone is: " . $timezone;
+echo $date;
  ?>
 </body>
 </html>
