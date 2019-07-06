@@ -33,15 +33,8 @@ date_default_timezone_set('America/Chicago');
  Coding %: $coding
  </p>
 HERE;
- //generate output for text file
- $output = <<< HERE
-first: $blazerId
-last: $totalTime
-email: $analysisAndDesign
-phone: $coding
-HERE;
  //open file for output
- $csvFile = fopen("projectdata.csv", "a");
+ $csvFileOpen = fopen("projectdata.csv", "a");
  $numberOfRows = count(file("projectdata.csv"));
  if($numberOfRows > 1)
   {
@@ -59,8 +52,7 @@ HERE;
    'timestamp' =>  $date = date('Y-m-d H:i:s')
   );
  //write to the file
- fwrite($fp, $output);
- fclose($fp);
+ fputcsv($csvFileOpen, $form_data);
 
 
  
