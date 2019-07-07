@@ -148,7 +148,7 @@ HERE;
   );
 
   echo '<p><a href="projectdata.csv">Download csv file</a></p>';
-  echo '<html><body><table style="width:100%">\n\n';
+  echo '<html><body><table style="width:100%">';
 
   //write to the file
   fputcsv($csvFileOpen, $form_data);
