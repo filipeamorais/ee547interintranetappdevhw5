@@ -23,14 +23,89 @@
 
   if(empty($_GET["blazerId"]))
  {
-  $error .= '<p><label class="text-danger">Please Enter your BlazerId</label></p>';
+  $error .= '<p><label class="text-danger">Please enter your BlazerId.</label></p>';
  }
  else
  {
-  $blazerId = clean_text($_POST["blazerId"]);
   if(!preg_match("/^[a-zA-Z ]*$/",$blazerId))
   {
-   $error .= '<p><label class="text-danger">Only letters and white space allowed</label></p><br /><p><a href="index.html">Home</a></p>';
+   $error .= '<p><label class="text-danger">Please, only letters and white space allowed.</label></p>';
+  }
+ }
+ if(empty($_GET["teamNumber"]))
+ {
+  $error .= '<p><label class="text-danger">Please enter your team number.</label></p>';
+ }
+ else
+ {
+  if(!preg_match("/^[a-zA-Z ]*$/",$teamNumber))
+  {
+   $error .= '<p><label class="text-danger">Please, only letters and white space allowed.</label></p>';
+  }
+ }
+ if(empty($_GET["totalTime"]))
+ {
+  $error .= '<p><label class="text-danger">Please enter the total time.</label></p>';
+ }
+ else
+ {
+  if(!preg_match("/^[a-zA-Z ]*$/",$totalTime))
+  {
+   $error .= '<p><label class="text-danger">Please, only letters and white space allowed.</label></p>';
+  }
+ }
+ if(empty($_GET["analysisAndDesign"]))
+ {
+  $error .= '<p><label class="text-danger">Please enter the analysis and design time.</label></p>';
+ }
+ else
+ {
+  if(!preg_match("/^[a-zA-Z ]*$/",$analysisAndDesign))
+  {
+   $error .= '<p><label class="text-danger">Please, only letters and white space allowed.</label></p>';
+  }
+ }if(empty($_GET["coding"]))
+ {
+  $error .= '<p><label class="text-danger">Please enter the coding time.</label></p>';
+ }
+ else
+ {
+  if(!preg_match("/^[a-zA-Z ]*$/",$coding))
+  {
+   $error .= '<p><label class="text-danger">Please, only letters and white space allowed.</label></p>';
+  }
+ }
+ if(empty($_GET["testing"]))
+ {
+  $error .= '<p><label class="text-danger">Please enter the testing time.</label></p>';
+ }
+ else
+ {
+  if(!preg_match("/^[a-zA-Z ]*$/",$testing))
+  {
+   $error .= '<p><label class="text-danger">Please, only letters and white space allowed.</label></p>';
+  }
+ }
+ if(empty($_GET["meeting"]))
+ {
+  $error .= '<p><label class="text-danger">Please enter the meeting time.</label></p>';
+ }
+ else
+ {
+  if(!preg_match("/^[a-zA-Z ]*$/",$meeting))
+  {
+   $error .= '<p><label class="text-danger">Please, only letters and white space allowed.</label></p>';
+  }
+ }
+ if(empty($_GET["other"]))
+ {
+  $error .= '<p><label class="text-danger">Please enter the other time.</label></p>';
+ }
+ else
+ {
+  if(!preg_match("/^[a-zA-Z ]*$/",$other))
+  {
+   $error .= '<p><label class="text-danger">Please, only letters and white space allowed.</label></p>';
   }
  }
  
