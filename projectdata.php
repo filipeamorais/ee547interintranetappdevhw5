@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>projectdata.html</title>
-  <link rel = "stylesheet" type = "text/css" href = "contact.css" />
+  <link rel = "stylesheet" type = "text/css" href = "site.css" />
 </head>
 <body>
 <?php
@@ -19,7 +19,23 @@
   $testing = filter_input(INPUT_GET, "testing");
   $meeting = filter_input(INPUT_GET, "meeting");
   $other = filter_input(INPUT_GET, "other");
+  $error = '';
 
+  if(empty($_GET["blazerId"]))
+ {
+  $error .= '<p><label class="text-danger">Please Enter your BlazerId</label></p>';
+ }
+ else
+ {
+  $blazerId = clean_text($_POST["blazerId"]);
+  if(!preg_match("/^[a-zA-Z ]*$/",$blazerId))
+  {
+   $error .= '<p><label class="text-danger">Only letters and white space allowed</label></p><br /><p><a href="index.html">Home</a></p>';
+  }
+ }
+ 
+if($error == '')
+{
  //print form results to user
  print <<< HERE
  <h1>Thank you!</h1>
@@ -54,7 +70,6 @@ HERE;
    'timestamp' =>  $date = date('Y-m-d H:i:s')
   );
 
-  echo '<p><a href="index.html">Printable report</a></p>';
   echo '<p><a href="projectdata.csv">Download csv file</a></p>';
   echo "<html><body><table>\n\n";
 
@@ -72,6 +87,10 @@ HERE;
   }
   fclose($f);
   echo "\n</table></body></html>";
+} else {
+  echo $error;
+  echo '<p><a href="index.html">Home</a></p>';
+}
 ?>
 </body>
 </html>
