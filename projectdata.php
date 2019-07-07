@@ -6,6 +6,8 @@
   <link rel = "stylesheet" type = "text/css" href = "site.css" />
 </head>
 <body>
+<main>
+<div>
 <?php
   
   date_default_timezone_set('America/Chicago');
@@ -146,7 +148,7 @@ HERE;
   );
 
   echo '<p><a href="projectdata.csv">Download csv file</a></p>';
-  echo "<html><body><table>\n\n";
+  echo '<html><body><table style="width:100%">\n\n';
 
   //write to the file
   fputcsv($csvFileOpen, $form_data);
@@ -167,5 +169,7 @@ HERE;
   echo '<p><a href="index.html">Home</a></p>';
 }
 ?>
+</div>
+</main>
 </body>
 </html>

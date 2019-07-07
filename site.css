@@ -8,6 +8,8 @@ body{
 
 h1, h2 {
     font-family: "Open Sans Condensed", "Arial", sans-serif;
+    text-align: center;
+    padding: 25px;
 }
 
 main h1{
@@ -28,6 +30,8 @@ main div{
 p{
     text-align: justify;
     margin: 10px 0;
+    padding: 25px;
+    text-align: center;
 }
 
 footer{
@@ -75,11 +79,11 @@ blockquote{
   padding: 20px;
 }
 
-table, th, td {
+table, th, td, tr {
   border: 1px solid black;
 }
 
-th, td {
+th, td, tr {
   padding: 15px;
 }
 
