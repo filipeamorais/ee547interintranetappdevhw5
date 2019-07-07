@@ -40,7 +40,7 @@
 HERE;
  //open file for output
  $csvFileOpen = fopen("projectdata.csv", "a");
- $numberOfRows = count(file("projectdata.csv"));
+ $numberOfRows = count(file("projectdata.csv")) + 1;
   $form_data = array(
    'numberOfRows'  => $numberOfRows,
    'blazerId'  => $blazerId,
@@ -55,7 +55,7 @@ HERE;
   );
 
   echo '<p><a href="index.html">Printable report</a></p>';
-  echo '<p><a href="index.html">Download csv file</a></p>';
+  echo '<p><a href="projectdata.csv">Download csv file</a></p>';
   echo "<html><body><table>\n\n";
 
   //write to the file
