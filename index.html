@@ -77,7 +77,7 @@
               <option value="five">6</option>
             </select>
             <br>
-            Total time: <input type="text" name="totalTime" value="" required>
+            Total time: <input type="text" name="totalTime" value="" onkeyup="checkTotalTime()" required>
             <br>
             Analysis and Design %: <input type="text" name="analysisAndDesign" value="" required>
             <br>
@@ -107,3 +107,11 @@
 
     </body>
 </html>
+
+<script>
+  var totalTimeinput = document.getElementsByName('totalTime');
+  function checkTotalTime(){
+    var totalTimeValue = totalTimeinput.value;
+    
+  }
+</script>
