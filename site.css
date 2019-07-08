@@ -15,7 +15,7 @@ h1, h2 {
 main h1{
     font-size: 40px;
     color: #FFF;
-    background-color: #851944;
+    background-color: #0a4108;
     text-align: center;
     padding: 20px;
     border-bottom: 10px solid black;
@@ -43,7 +43,7 @@ nav a{
 }
 
 main a{
-  color: #851944;
+  color: #0d570b;
 }
 
 strong {
@@ -87,7 +87,7 @@ th, td, tr {
 }
 
 th {
-  background-color: #851944;
+  background-color: #0a4108;
   color: white;
 }
 
@@ -103,7 +103,7 @@ input[type=text], select {
 
 input[type=submit] {
   width: 100%;
-  background-color: #851944;
+  background-color: #0a4108;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -113,7 +113,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: #830a36;
+  background-color: #0d570b;
 }
 
 div[id=form1] {
