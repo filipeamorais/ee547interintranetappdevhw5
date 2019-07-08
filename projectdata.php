@@ -34,26 +34,15 @@
    $error .= '<p><label class="text-danger">Please, only letters and white space allowed.</label></p>';
   }
  }
- if(empty($_GET["teamNumber"]))
- {
-  $error .= '<p><label class="text-danger">Please enter your team number.</label></p>';
- }
- else
- {
-  if(!preg_match("/^[a-zA-Z ]*$/",$teamNumber))
-  {
-   $error .= '<p><label class="text-danger">Please, only letters and white space allowed.</label></p>';
-  }
- }
  if(empty($_GET["totalTime"]))
  {
   $error .= '<p><label class="text-danger">Please enter the total time.</label></p>';
  }
  else
  {
-  if(!preg_match("/^[a-zA-Z ]*$/",$totalTime))
+  if(!preg_match("/^[1-9][0-9]{0,2}$/",$totalTime))
   {
-   $error .= '<p><label class="text-danger">Please, only letters and white space allowed.</label></p>';
+   $error .= '<p><label class="text-danger">Please, only numbers allowed for the total time.</label></p>';
   }
  }
  if(empty($_GET["analysisAndDesign"]))
@@ -62,9 +51,9 @@
  }
  else
  {
-  if(!preg_match("/^[a-zA-Z ]*$/",$analysisAndDesign))
+  if(!preg_match("/^[1-9][0-9]{0,2}$/",$analysisAndDesign))
   {
-   $error .= '<p><label class="text-danger">Please, only letters and white space allowed.</label></p>';
+   $error .= '<p><label class="text-danger">Please, only numbers allowed for the analysis and design time.</label></p>';
   }
  }if(empty($_GET["coding"]))
  {
@@ -72,9 +61,9 @@
  }
  else
  {
-  if(!preg_match("/^[a-zA-Z ]*$/",$coding))
+  if(!preg_match("/^[1-9][0-9]{0,2}$/",$coding))
   {
-   $error .= '<p><label class="text-danger">Please, only letters and white space allowed.</label></p>';
+   $error .= '<p><label class="text-danger">Please, only numbers allowed for the coding time.</label></p>';
   }
  }
  if(empty($_GET["testing"]))
@@ -83,9 +72,9 @@
  }
  else
  {
-  if(!preg_match("/^[a-zA-Z ]*$/",$testing))
+  if(!preg_match("/^[1-9][0-9]{0,2}$/",$testing))
   {
-   $error .= '<p><label class="text-danger">Please, only letters and white space allowed.</label></p>';
+   $error .= '<p><label class="text-danger">Please, only numbers allowed for the testing time.</label></p>';
   }
  }
  if(empty($_GET["meeting"]))
@@ -94,9 +83,9 @@
  }
  else
  {
-  if(!preg_match("/^[a-zA-Z ]*$/",$meeting))
+  if(!preg_match("/^[1-9][0-9]{0,2}$/",$meeting))
   {
-   $error .= '<p><label class="text-danger">Please, only letters and white space allowed.</label></p>';
+   $error .= '<p><label class="text-danger">Please, only numbers allowed for the meeting time.</label></p>';
   }
  }
  if(empty($_GET["other"]))
@@ -105,9 +94,9 @@
  }
  else
  {
-  if(!preg_match("/^[a-zA-Z ]*$/",$other))
+  if(!preg_match("/^[1-9][0-9]{0,2}$/",$other))
   {
-   $error .= '<p><label class="text-danger">Please, only letters and white space allowed.</label></p>';
+   $error .= '<p><label class="text-danger">Please, only numbers allowed for the other time.</label></p>';
   }
  }
  
