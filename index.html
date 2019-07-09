@@ -77,17 +77,17 @@
               <option value="five">6</option>
             </select>
             <br>
-            Total time: <input type="text" name="totalTime" value="" onkeyup="checkTotalTime()" required>
+            Total time: <input type="text" name="totalTime" id="totalTime" value="" OnKeyUp="checkTime(this);" required>
             <br>
-            Analysis and Design %: <input type="text" name="analysisAndDesign" value="" required>
+            Analysis and Design %: <input type="text" name="analysisAndDesign" id="analysisAndDesign" value="" OnKeyUp="checkTime(this);" required>
             <br>
-            Coding %: <input type="text" name="coding" value="" required>
+            Coding %: <input type="text" name="coding" id="coding" value="" OnKeyUp="checkTime(this);" required>
             <br>
-            Testing %: <input type="text" name="testing" value="" required>
+            Testing %: <input type="text" name="testing" id="testing" value="" OnKeyUp="checkTime(this);" required>
             <br>
-            Meeting %: <input type="text" name="meeting" value="" required>
+            Meeting %: <input type="text" name="meeting" id="meeting" value="" OnKeyUp="checkTime(this);" required>
             <br>
-            Other %: <input type="text" name="other" value=""required>
+            Other %: <input type="text" name="other" id="other" value="" OnKeyUp="checkTime(this);" required>
             <br>
             <br>
             <input type="submit" value="Submit">
@@ -109,9 +109,21 @@
 </html>
 
 <script>
-  var totalTimeinput = document.getElementsByName('totalTime');
-  function checkTotalTime(){
-    var totalTimeValue = totalTimeinput.value;
-    
+ 
+
+  function checkTime(element){
+    var elementInput = document.getElementById(element.id);
+    var elementValue = elementInput.value;
+    console.log(elementValue)
+    if (!isNaN(elementValue)){
+        if (elementValue>100){
+        elementInput.style.border='1px solid red';
+      } else {
+        console.log("now")
+        elementInput.style.border='1px solid #ccc';
+      }
+    }else{
+      elementInput.style.border='1px solid red';
+    }
   }
 </script>
