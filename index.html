@@ -112,12 +112,10 @@
   function checkTime(element){
     var elementInput = document.getElementById(element.id);
     var elementValue = elementInput.value;
-    console.log(elementValue)
     if (!isNaN(elementValue)){
         if (elementValue>100){
         elementInput.style.border='1px solid red';
       } else {
-        console.log("now")
         elementInput.style.border='1px solid #ccc';
       }
     }else{
